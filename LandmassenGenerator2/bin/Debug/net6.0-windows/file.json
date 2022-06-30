@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Deep Ocean",
+    "compatible": [
+      "Ocean"
+    ],
+    "compatibleWeight": [
+      100
+    ],
+    "color": {
+      "R": 0,
+      "G": 0,
+      "B": 139,
+      "A": 255,
+      "IsKnownColor": true,
+      "IsEmpty": false,
+      "IsNamedColor": true,
+      "IsSystemColor": false,
+      "Name": "DarkBlue"
+    }
+  },
+  {
+    "name": "Ocean",
+    "compatible": [
+      "Deep Ocean"
+    ],
+    "compatibleWeight": [
+      100
+    ],
+    "color": {
+      "R": 0,
+      "G": 0,
+      "B": 255,
+      "A": 255,
+      "IsKnownColor": true,
+      "IsEmpty": false,
+      "IsNamedColor": true,
+      "IsSystemColor": false,
+      "Name": "Blue"
+    }
+  }
+]
