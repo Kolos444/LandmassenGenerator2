@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Shapes;
-using Color = System.Windows.Media.Color;
-using Rectangle = System.Windows.Shapes.Rectangle;
 
 namespace LandmassenGenerator2;
 
@@ -53,14 +50,11 @@ public partial class MainWindow : Window{
 	private void DrawMap() {
 		for (int y = 0; y < _map.GetLength(1); y++){
 			for (int x = 0; x < _map.GetLength(0); x++){
-				Line line = new Line {
-					Width = 2,
-					Stroke = new SolidColorBrush(_map[x,y]!.Value.color)
+				Rectangle line = new() {
+					Stroke          = new SolidColorBrush(_map[x, y]!.Value.color),
+					StrokeThickness = 2,
+
 				};
-				line.X1 = x;
-				line.X2 = x+1;
-				line.Y2 = y;
-				line.Y2 = y+1;
 				Canvas.Children.Add(line);
 			}
 		}

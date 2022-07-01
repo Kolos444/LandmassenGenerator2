@@ -19,29 +19,37 @@ public static class MapGenerator{
 		Dictionary<string, int> possibilities = new();
 
 		if (x - 1 >= 0 && map[x - 1, y] != null)
-			for (int i = 0; i < map[x - 1, y]!.Value.compatible!.Length; i++)
-				possibilities.Add(map[x - 1, y]!.Value.compatible![i], map[x - 1, y]!.Value.compatibleWeight![i]);
+			for (int i = 0; i < map[x - 1, y]!.Value.compatible!.Length; i++){
+				Tiles tile = map[x - 1, y]!.Value;
+				possibilities.Add(tile.compatible![i], tile.compatibleWeight![i]);
+			}
 
 		if (y + 1 < map.GetLength(1) && map[x, y + 1] != null)
-			for (int i = 0; i < map[x, y + 1]!.Value.compatible!.Length; i++)
-				if (possibilities.ContainsKey(map[x, y + 1]!.Value.compatible![i]))
-					possibilities[map[x, y + 1]!.Value.compatible![i]] += map[x, y + 1]!.Value.compatibleWeight![i];
+			for (int i = 0; i < map[x, y + 1]!.Value.compatible!.Length; i++){
+				Tiles tile = map[x, y + 1]!.Value;
+				if (possibilities.ContainsKey(tile.compatible![i]))
+					possibilities[tile.compatible![i]] += tile.compatibleWeight![i];
 				else
-					possibilities.Add(map[x, y + 1]!.Value.compatible![i], map[x - 1, y]!.Value.compatibleWeight![i]);
+					possibilities.Add(tile.compatible![i], tile.compatibleWeight![i]);
+			}
 
 		if (x + 1 < map.GetLength(0) && map[x + 1, y] != null)
-			for (int i = 0; i < map[x + 1, y]!.Value.compatible!.Length; i++)
-				if (possibilities.ContainsKey(map[x + 1, y]!.Value.compatible![i]))
-					possibilities[map[x + 1, y]!.Value.compatible![i]] += map[x, y + 1]!.Value.compatibleWeight![i];
+			for (int i = 0; i < map[x + 1, y]!.Value.compatible!.Length; i++){
+				Tiles tile = map[x + 1, y]!.Value;
+				if (possibilities.ContainsKey(tile.compatible![i]))
+					possibilities[tile.compatible![i]] += tile.compatibleWeight![i];
 				else
-					possibilities.Add(map[x + 1, y]!.Value.compatible![i], map[x - 1, y]!.Value.compatibleWeight![i]);
+					possibilities.Add(tile.compatible![i], tile.compatibleWeight![i]);
+			}
 
 		if (y - 1 >= 0 && map[x, y - 1] != null)
-			for (int i = 0; i < map[x, y - 1]!.Value.compatible!.Length; i++)
-				if (possibilities.ContainsKey(map[x, y - 1]!.Value.compatible![i]))
-					possibilities[map[x, y - 1]!.Value.compatible![i]] += map[x, y + 1]!.Value.compatibleWeight![i];
+			for (int i = 0; i < map[x, y - 1]!.Value.compatible!.Length; i++){
+				Tiles tiles = map[x, y - 1]!.Value;
+				if (possibilities.ContainsKey(tiles.compatible![i]))
+					possibilities[tiles.compatible![i]] += tiles.compatibleWeight![i];
 				else
-					possibilities.Add(map[x, y - 1]!.Value.compatible![i], map[x - 1, y]!.Value.compatibleWeight![i]);
+					possibilities.Add(tiles.compatible![i], tiles.compatibleWeight![i]);
+			}
 
 		int maxPossibility = 0;
 
