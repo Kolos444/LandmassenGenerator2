@@ -8,15 +8,15 @@
       100
     ],
     "color": {
+      "ColorContext": null,
+      "A": 255,
       "R": 0,
       "G": 0,
       "B": 139,
-      "A": 255,
-      "IsKnownColor": true,
-      "IsEmpty": false,
-      "IsNamedColor": true,
-      "IsSystemColor": false,
-      "Name": "DarkBlue"
+      "ScA": 1,
+      "ScR": 0,
+      "ScG": 0,
+      "ScB": 0.25818288
     }
   },
   {
@@ -28,15 +28,15 @@
       100
     ],
     "color": {
+      "ColorContext": null,
+      "A": 255,
       "R": 0,
       "G": 0,
       "B": 255,
-      "A": 255,
-      "IsKnownColor": true,
-      "IsEmpty": false,
-      "IsNamedColor": true,
-      "IsSystemColor": false,
-      "Name": "Blue"
+      "ScA": 1,
+      "ScR": 0,
+      "ScG": 0,
+      "ScB": 1
     }
   }
 ]

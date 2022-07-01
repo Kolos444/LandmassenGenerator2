@@ -8,6 +8,9 @@
         Title="Landmassengenerator" Height="720" Width="1080" Background="Transparent">
     <Grid>
         <Border Background="#222222" CornerRadius="10">
+            <Grid Name="Canvas" Background="Transparent" Width="100" Height="100">
+
+            </Grid>
 
         </Border>
     </Grid>

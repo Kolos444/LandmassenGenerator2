@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿
+using System.Windows.Media;
 
 namespace LandmassenGenerator2;
 
@@ -10,8 +11,8 @@ public struct Tiles{
 		this.color            = color;
 	}
 
-	public string    name             { get; }
-	public string[]? compatible       { get; }
-	public int[]?    compatibleWeight { get; }
-	public Color     color            { get; }
+	public string    name             { get; set; }
+	public string[]? compatible       { get; set;  }
+	public int[]?    compatibleWeight { get; set;  }
+	public Color     color            { get; set;  }
 }
